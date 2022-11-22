@@ -6,6 +6,8 @@ export function ExploreThree1() {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // 创建坐标轴
+    const axes = new THREE.AxesHelper(500)
     // 创建场景
     const scene = new THREE.Scene()
 
@@ -21,6 +23,8 @@ export function ExploreThree1() {
     const pointLight = new THREE.PointLight(0xffffff)
     pointLight.position.set(100, 200, 500)
 
+    // 将坐标轴添加进场景
+    scene.add(axes)
     // 将mesh添加到场景
     scene.add(model)
     // 将环境光添加到场景
