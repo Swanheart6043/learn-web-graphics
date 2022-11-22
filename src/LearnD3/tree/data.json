@@ -1,0 +1,23 @@
+[
+  {
+    "name": "deps",
+    "children": [
+      {
+        "name": "dev",
+        "children": [
+          {
+            "name": "dev-1"
+          }
+        ]
+      },
+      {
+        "name": "test",
+        "children": [
+          {
+            "name": "test1"
+          }
+        ]
+      }
+    ]
+  }
+]
