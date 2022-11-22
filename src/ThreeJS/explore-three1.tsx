@@ -51,10 +51,11 @@ export function ExploreThree1() {
 
     renderer.render(scene, camera)
 
-    ref?.current?.appendChild(renderer.domElement)
-
+    // 添加轨道控制器
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.addEventListener("change", () => renderer.render(scene, camera))
+
+    ref?.current?.appendChild(renderer.domElement)
   }, [])
 
   return <div className="hello-three" ref={ref}></div>
