@@ -1,15 +1,18 @@
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 
 export function ExploreThree2() {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // 创建坐标轴
+    const axes = new THREE.AxesHelper(500)
     // 创建场景
     const scene = new THREE.Scene()
 
     // 创建物体
-    const geometry = new THREE.BoxGeometry(100, 100, 100)
+    const geometry = new THREE.SphereGeometry(100, 100, 100)
     // 创建材质
     const material = new THREE.MeshLambertMaterial({ color: 0x0000ff })
     // 创建mesh
@@ -20,6 +23,8 @@ export function ExploreThree2() {
     const pointLight = new THREE.PointLight(0xffffff)
     pointLight.position.set(100, 200, 500)
 
+    // 将坐标轴添加进场景
+    scene.add(axes)
     // 将mesh添加到场景
     scene.add(model)
     // 将环境光添加到场景
@@ -45,6 +50,10 @@ export function ExploreThree2() {
     renderer.setClearColor(0xb9d3ff, 1)
 
     renderer.render(scene, camera)
+
+    // 添加轨道控制器
+    const controls = new OrbitControls(camera, renderer.domElement)
+    controls.addEventListener("change", () => renderer.render(scene, camera))
 
     ref?.current?.appendChild(renderer.domElement)
   }, [])

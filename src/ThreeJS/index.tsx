@@ -4,8 +4,8 @@ import { ExploreThree2 } from "./explore-three2"
 export function HelloThree() {
   return (
     <>
-      <ExploreThree1 />
-      {/* <ExploreThree2 /> */}
+      {/* <ExploreThree1 /> */}
+      <ExploreThree2 />
     </>
   )
 }
