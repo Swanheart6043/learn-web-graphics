@@ -10,15 +10,15 @@ export default function PanningAndZooming() {
     const svg = d3
       .select("body")
       .append("svg")
-      .attr("width", 500)
-      .attr("height", 300)
-      .attr("transform", "translate(500, 200)")
+      .attr("width", 1305)
+      .attr("height", 705)
+      .attr("transform", "translate(30, 30)")
       .style("border", "1px solid #f0f0f0")
 
     const g = svg.append("g")
 
-    for (let i = 0; i < 10; i++) {
-      for (let j = 0; j < 5; j++) {
+    for (let i = 0; i < 20; i++) {
+      for (let j = 0; j < 10; j++) {
         const res = g
           .append("rect")
           .attr("width", 20)
