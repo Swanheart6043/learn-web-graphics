@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import * as d3 from "d3"
 
-export default function ExploreD31() {
+export default function ExploreLine() {
   useEffect(() => {
     const area = d3.select("#map-area")
     const svg = area.append("svg")
@@ -13,5 +13,5 @@ export default function ExploreD31() {
       .attr("transform", "translate(30, 40)")
   })
 
-  return <div id="map-area"></div>
+  return <div id="line"></div>
 }
